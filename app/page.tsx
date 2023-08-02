@@ -2,7 +2,7 @@
 export default function Home() {
   return (
     <main>
-      Hi there
+     THis is a movie page
     </main>
   )
 }
