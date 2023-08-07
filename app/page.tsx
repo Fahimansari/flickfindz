@@ -23,7 +23,7 @@ if (user) {
   return <div>Welcome {user.displayName}</div>
 }
 
-  const signInWithGoogle =async () => {
+  const handleSignInWithGoogle =async () => {
     const result = await signInWithPopup(auth, provider)
     console.log(result.user);
     
@@ -39,15 +39,15 @@ if (user) {
             <div>
               <img
                 className="h-10 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt="Your Company"
+                src="/favicon.ico"
+                alt="Logo"
               />
               <h2 className="mt-8 text-2xl font-bold leading-9 tracking-tight text-gray-900">
                 Sign in to your account
               </h2>
               <p className="mt-2 text-sm leading-6 text-gray-500">
                 Not a member?{' '}
-                <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                <a href="#" className="font-semibold text-yellow-600 hover:text-indigo-500">
                   Sign Up
                 </a>
               </p>
@@ -102,7 +102,7 @@ if (user) {
                     </div>
 
                     <div className="text-sm leading-6">
-                      <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                      <a href="#" className="font-semibold text-yellow-800 hover:text-yellow-500">
                         Forgot password?
                       </a>
                     </div>
@@ -111,7 +111,7 @@ if (user) {
                   <div>
                     <button
                       type="submit"
-                      className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                      className="flex w-full justify-center rounded-md bg-yellow-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                     >
                       Sign in
                     </button>
@@ -131,7 +131,7 @@ if (user) {
 
                 <div className="mt-6 grid grid-cols-2 gap-4">
                   <button
-                    onClick={signInWithGoogle}
+                    
                     className="flex w-full items-center justify-center gap-3 rounded-md bg-[#1D9BF0] px-3 py-1.5 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1D9BF0]"
                   >
                     <svg className="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
@@ -140,8 +140,8 @@ if (user) {
                     <span className="text-sm font-semibold leading-6">Twitter</span>
                   </button>
 
-                  <a
-                    href="#"
+                  <button
+                    onClick={handleSignInWithGoogle}
                     className="flex w-full items-center justify-center gap-3 rounded-md bg-[#24292F] px-3 py-1.5 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#24292F]"
                   >
                     <svg className="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
@@ -152,7 +152,7 @@ if (user) {
                       />
                     </svg>
                     <span className="text-sm font-semibold leading-6">GitHub</span>
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
