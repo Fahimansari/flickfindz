@@ -1,6 +1,6 @@
 'use client'
 import { initFirebase } from "@/firebase/firebaseConfig";
-import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import { GoogleAuthProvider, TwitterAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import { useRouter } from "next/navigation";
 import { useAuthState } from 'react-firebase-hooks/auth';
 
@@ -8,24 +8,34 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 export default function Home() {
 
   const app = initFirebase()
-  const provider = new GoogleAuthProvider();
   const auth = getAuth();
-
+  
   const [user, loading] = useAuthState(auth)
   const router = useRouter();
+  
+  if (loading) {
+    return <div> Loading ...</div>
+  }
 
-if (loading) {
-  return <div> Loading ...</div>
-}
-
-if (user) {
-  router.push('/dashboard')
-  return <div>Welcome {user.displayName}</div>
-}
-
+  if (user) {
+    router.push('/dashboard')
+    return <div>Welcome {user.displayName}</div>
+  }
+  
   const handleSignInWithGoogle =async () => {
+    const provider = new GoogleAuthProvider();
     const result = await signInWithPopup(auth, provider)
     console.log(result.user);
+    
+  }
+
+  const handleSignInWithTwitter = async () => {
+    const provider = new TwitterAuthProvider();
+    const result = signInWithPopup(auth, provider).catch(e => {
+      console.log(e);
+      
+    })
+    console.log(result);
     
   }
 
@@ -131,7 +141,7 @@ if (user) {
 
                 <div className="mt-6 grid grid-cols-2 gap-4">
                   <button
-                    
+                    onClick={handleSignInWithTwitter}
                     className="flex w-full items-center justify-center gap-3 rounded-md bg-[#1D9BF0] px-3 py-1.5 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1D9BF0]"
                   >
                     <svg className="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
