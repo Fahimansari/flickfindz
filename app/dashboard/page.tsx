@@ -21,7 +21,7 @@ const SignedIn = () => {
     signOut(auth). then(() => {
       console.log(auth.currentUser);
       
-      // router.push('/')
+      router.push('/')
     }).catch((error) => {
       console.log(error);
       
@@ -29,7 +29,7 @@ const SignedIn = () => {
   }
   return (
   <>
-    <div>SignedIn</div>
+    <div>Welcome {user.displayName}</div>
     <button onClick={handlesignOut}>SignOut</button>
   </>
   )

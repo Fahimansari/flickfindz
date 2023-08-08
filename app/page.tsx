@@ -1,6 +1,8 @@
 'use client'
 import { initFirebase } from "@/firebase/firebaseConfig";
+import loginBg from '@/public/loginBg.png';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import Image from 'next/image';
 import { useRouter } from "next/navigation";
 import { useAuthState } from 'react-firebase-hooks/auth';
 
@@ -9,23 +11,24 @@ export default function Home() {
 
   const app = initFirebase()
   const auth = getAuth();
+  const provider = new GoogleAuthProvider();
   
   const [user, loading] = useAuthState(auth)
   const router = useRouter();
   
-  if (loading) {
-    return <div> Loading ...</div>
-  }
+  // if (loading) {
+  //   return <div> Loading ...</div>
+  // }
 
-  if (user) {
-    router.push('/dashboard')
-    return <div>Welcome {user.displayName}</div>
-  }
+  // if (user) {
+  //   router.push('/dashboard')
+  //   return <div>Welcome {user.displayName}</div>
+  // }
   
   const handleSignInWithGoogle =async () => {
-    const provider = new GoogleAuthProvider();
     const result = await signInWithPopup(auth, provider)
     console.log(result.user);
+    router.push('/dashboard')
     
   }
 
@@ -152,9 +155,11 @@ export default function Home() {
           </div>
         </div>
         <div className="relative hidden w-0 flex-1 lg:block">
-          <img
+          <Image
             className="absolute inset-0 h-full w-full object-cover"
-            src="https://images.unsplash.com/photo-1496917756835-20cb06e75b4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1908&q=80"
+            src={loginBg} 
+            width={1000}
+            height={1000}
             alt=""
           />
         </div>
