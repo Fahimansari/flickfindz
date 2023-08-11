@@ -3,9 +3,9 @@ import { initFirebase } from "@/firebase/firebaseConfig";
 import loginBg from '@/public/loginBg.png';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from "next/navigation";
 import { useAuthState } from 'react-firebase-hooks/auth';
-
 
 export default function Home() {
 
@@ -52,9 +52,9 @@ export default function Home() {
               </h2>
               <p className="mt-2 text-sm leading-6 text-gray-500">
                 Not a member?{' '}
-                <a href="#" className="font-semibold text-yellow-600 hover:text-indigo-500">
+                <Link  href ='/signup' className="font-semibold text-yellow-600 hover:text-indigo-500">
                   Sign Up
-                </a>
+                </Link>
               </p>
             </div>
 
