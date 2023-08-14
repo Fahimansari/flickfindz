@@ -5,15 +5,17 @@ import React, { Fragment, useEffect, useRef, useState } from 'react'
 
 interface ConfirmationModalProps{
   opened: boolean
+  updateModalValue: Function
 }
 
-const PasswordConfirmModal: React.FC<ConfirmationModalProps> = ({opened}) => {
-  const [open, setOpen] = useState(false)
+const PasswordConfirmModal: React.FC<ConfirmationModalProps> = ({opened, updateModalValue}) => {
+  const [open, setOpen] = useState(true)
 
   const cancelButtonRef = useRef(null)
 
   useEffect(() => {
     setOpen(opened)
+  console.log(opened);
   
 
   }, [opened])
@@ -21,7 +23,7 @@ const PasswordConfirmModal: React.FC<ConfirmationModalProps> = ({opened}) => {
 
   return (
     <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
+      <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={() => updateModalValue()}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -66,14 +68,14 @@ const PasswordConfirmModal: React.FC<ConfirmationModalProps> = ({opened}) => {
                   <button
                     type="button"
                     className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
-                    onClick={() => setOpen(false)}
+                    onClick={() => updateModalValue()}
                   >
                     Deactivate
                   </button>
                   <button
                     type="button"
                     className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-                    onClick={() => setOpen(false)}
+                    onClick={() => updateModalValue()}
                     ref={cancelButtonRef}
                   >
                     Cancel

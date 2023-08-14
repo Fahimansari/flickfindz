@@ -1,6 +1,6 @@
 "use client";
 import PasswordConfirmModal from "@/components/PasswordConfirmModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 /*
   This example requires some changes to your config:
@@ -22,19 +22,41 @@ export default function SignUp() {
   const [confirmpassword, setConfirmpassword] = useState("");
   const [modalOpen, setmodalOpen] = useState(false)
 
-  const handleSignUp = () => {
-    console.log(email);
-    console.log(password);
-    console.log(confirmpassword);
-    setmodalOpen(true)
+  const updateModalValue = () => {
+setmodalOpen(false)
+  }
 
+  const handleSignUp = () => {
+    setmodalOpen(false)
+    console.log(false);
+    
+    if (password !== confirmpassword) {
+      console.log('Itsa here'); 
+      setmodalOpen(true)
+      
+    }
+    else {
+      setmodalOpen(false)
+      console.log('We can pass these details to Sign Up');
+      console.log(email);
+      console.log(password);
+      console.log(confirmpassword);
+  
+}
 
     
   };
 
+  useEffect(() => {
+    
+  
+   
+  }, [modalOpen])
+  
+
   return (
 <>
- <PasswordConfirmModal opened={modalOpen} />  
+ <PasswordConfirmModal opened={modalOpen}  updateModalValue={updateModalValue} />  
     <div className='flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8'>
         <div className='sm:mx-auto sm:w-full sm:max-w-sm'>
           <img
@@ -51,7 +73,7 @@ export default function SignUp() {
           <form
             className='space-y-6'
             action='#'
-            method='POST'
+            method=''
             onSubmit={handleSignUp}
           >
             <div>
@@ -103,7 +125,7 @@ export default function SignUp() {
                 <input
                   id='password-signup-confirm'
                   name='confirmpassword'
-                  type='confirmpassword'
+                  type='password'
                   value={confirmpassword}
                   autoComplete='current-password'
                   placeholder='Re-enter password'
@@ -114,7 +136,7 @@ export default function SignUp() {
               </div>
             </div>
 
-            <div>
+            <div className="flex justify-center">
               <button
                 type='submit'
                 onSubmit={handleSignUp}
