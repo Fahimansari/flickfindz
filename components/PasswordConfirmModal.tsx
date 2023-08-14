@@ -1,12 +1,23 @@
 'use client'
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
-import { Fragment, useRef, useState } from 'react'
+import React, { Fragment, useEffect, useRef, useState } from 'react'
 
-export default function PasswordConfirmModal() {
-  const [open, setOpen] = useState(true)
+interface ConfirmationModalProps{
+  opened: boolean
+}
+
+const PasswordConfirmModal: React.FC<ConfirmationModalProps> = ({opened}) => {
+  const [open, setOpen] = useState(false)
 
   const cancelButtonRef = useRef(null)
+
+  useEffect(() => {
+    setOpen(opened)
+  
+
+  }, [opened])
+  
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -77,3 +88,4 @@ export default function PasswordConfirmModal() {
   )
 }
 
+export default PasswordConfirmModal

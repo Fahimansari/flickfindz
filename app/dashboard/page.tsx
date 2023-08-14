@@ -11,6 +11,9 @@ const ConfirmationModal:React.FC<ConfirmationModalProps> =  ({opened} ) =>  {
   const [open, setOpen] = useState(true)
 
   return (
+
+    <>
+    <h2>Hi there</h2>
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
         <Transition.Child
@@ -67,6 +70,8 @@ const ConfirmationModal:React.FC<ConfirmationModalProps> =  ({opened} ) =>  {
         </div>
       </Dialog>
     </Transition.Root>
+    </>
+    
   )
 }
 

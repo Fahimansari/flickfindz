@@ -20,20 +20,21 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmpassword] = useState("");
-  const [modalOpen, setmodalOpen] = useState(true)
+  const [modalOpen, setmodalOpen] = useState(false)
 
   const handleSignUp = () => {
     console.log(email);
     console.log(password);
     console.log(confirmpassword);
+    setmodalOpen(true)
 
 
     
   };
 
   return (
-
-    modalOpen? <PasswordConfirmModal  />  : <>
+<>
+ <PasswordConfirmModal opened={modalOpen} />  
     <div className='flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8'>
         <div className='sm:mx-auto sm:w-full sm:max-w-sm'>
           <img
