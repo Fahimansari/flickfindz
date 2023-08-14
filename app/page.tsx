@@ -83,7 +83,7 @@ export default function Home() {
                     </label>
                     <div className="mt-2">
                       <input
-                        id="password"
+                        id="password-signin"
                         name="password"
                         type="password"
                         autoComplete="current-password"
