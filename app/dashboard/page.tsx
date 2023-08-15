@@ -14,7 +14,7 @@ const [user, loading] = useAuthState(auth)
   return (
 
     <>
-    <h2>Hi there</h2>
+    <div>{user?.email}</div>
     </>
     
   )
