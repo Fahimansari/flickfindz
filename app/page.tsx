@@ -5,6 +5,7 @@ import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from "next/navigation";
+import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 export default function Home() {
@@ -14,6 +15,8 @@ export default function Home() {
   const provider = new GoogleAuthProvider();
   
   const [user, loading] = useAuthState(auth)
+const [email, setEmail] = useState('')
+const [password, setPassword] = useState('')
   const router = useRouter();
   
   // if (loading) {
@@ -24,10 +27,17 @@ export default function Home() {
   //   router.push('/dashboard')
   //   return <div>Welcome {user.displayName}</div>
   // }
+
+
+  const handleSignInWithEmailandPassword = async() => {
+    // const result = 
+  }
   
   const handleSignInWithGoogle =async () => {
     const result = await signInWithPopup(auth, provider)
     console.log(result.user);
+    console.log(user);
+    
     router.push('/dashboard')
     
   }
@@ -60,37 +70,43 @@ export default function Home() {
 
             <div className="mt-10">
               <div>
-                <form action="#" method="POST" className="space-y-6">
+                <form action="#" method="" className="space-y-6">
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                       Email address
                     </label>
-                    <div className="mt-2">
-                      <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        autoComplete="email"
-                        required
-                        className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
+                    <div className='mt-2'>
+                <input
+                  id='email'
+                  name='email'
+                  type='email'
+                  value={email}
+                  placeholder='You email'
+                  autoComplete='email'
+                  required
+                  className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
                   </div>
 
                   <div>
                     <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
                       Password
                     </label>
-                    <div className="mt-2">
-                      <input
-                        id="password-signin"
-                        name="password"
-                        type="password"
-                        autoComplete="current-password"
-                        required
-                        className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
+                    <div className='mt-2'>
+                <input
+                  id='password'
+                  name='password'
+                  type='password'
+                  value={password}
+                  placeholder='password'
+                  autoComplete='current-password'
+                  required
+                  className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
                   </div>
 
                   <div className="flex items-center justify-between">
@@ -117,6 +133,7 @@ export default function Home() {
                     <button
                       type="submit"
                       className="flex w-full justify-center rounded-md bg-yellow-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                      onClick={handleSignInWithEmailandPassword}
                     >
                       Sign in
                     </button>

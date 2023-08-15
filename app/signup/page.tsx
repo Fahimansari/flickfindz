@@ -1,63 +1,52 @@
 "use client";
 import PasswordConfirmModal from "@/components/PasswordConfirmModal";
+import { initFirebase } from "@/firebase/firebaseConfig";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
 export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmpassword] = useState("");
-  const [modalOpen, setmodalOpen] = useState(false)
+  const [modalOpen, setmodalOpen] = useState(false);
+  const app = initFirebase();
+  const auth = getAuth();
+
+  const [user, loading] = useAuthState(auth);
 
   const updateModalValue = () => {
-setmodalOpen(false)
-  }
-
-  const handleSignUp = () => {
-    setmodalOpen(false)
-    console.log(false);
-    
-    if (password !== confirmpassword) {
-      console.log('Itsa here'); 
-      setmodalOpen(true)
-      
-    }
-    else {
-      setmodalOpen(false)
-      console.log('We can pass these details to Sign Up');
-      console.log(email);
-      console.log(password);
-      console.log(confirmpassword);
-  
-}
-
-    
+    setmodalOpen(false);
   };
 
-  useEffect(() => {
-    
-  
-   
-  }, [modalOpen])
-  
+  const handleSignUp = () => {
+    setmodalOpen(false);
+    console.log(false);
+
+    if (password !== confirmpassword) {
+      setmodalOpen(true);
+    } else {
+      setmodalOpen(false);
+      console.log("We can pass these details to Sign Up");
+
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          //Signed In
+          // const user = userCredential.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          console.log(error.code);
+          console.log(error.message);
+        });
+    }
+  };
+
+  useEffect(() => {}, [modalOpen]);
 
   return (
-<>
- <PasswordConfirmModal opened={modalOpen}  updateModalValue={updateModalValue} />  
-    <div className='flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8'>
+    <>
+      <div className='flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8'>
         <div className='sm:mx-auto sm:w-full sm:max-w-sm'>
           <img
             className='mx-auto h-10 w-auto'
@@ -93,7 +82,7 @@ setmodalOpen(false)
                   autoComplete='email'
                   required
                   className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-                  onChange={e => setEmail(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
             </div>
@@ -118,7 +107,7 @@ setmodalOpen(false)
                   autoComplete='current-password'
                   required
                   className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-                  onChange={e => setPassword(e.target.value)}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <div className='mt-2'>
@@ -131,12 +120,12 @@ setmodalOpen(false)
                   placeholder='Re-enter password'
                   required
                   className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-                  onChange={e => setConfirmpassword(e.target.value)}
+                  onChange={(e) => setConfirmpassword(e.target.value)}
                 />
               </div>
             </div>
 
-            <div className="flex justify-center">
+            <div className='flex justify-center'>
               <button
                 type='submit'
                 onSubmit={handleSignUp}
@@ -147,10 +136,11 @@ setmodalOpen(false)
             </div>
           </form>
         </div>
+        <PasswordConfirmModal
+          opened={modalOpen}
+          updateModalValue={updateModalValue}
+        />
       </div>
-
-</>
-      
-  )
-  }      
-
+    </>
+  );
+}
