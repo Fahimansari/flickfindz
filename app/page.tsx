@@ -6,12 +6,11 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   signInWithPopup,
-  signOut,
 } from "firebase/auth";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function Home() {
@@ -25,30 +24,22 @@ export default function Home() {
   const router = useRouter();
 
   const handleSignInWithEmailandPassword = async () => {
-    if (user) {
-      signOut(auth);
-    } 
-      signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          router.push('/dashboard')
-          console.log(user);
-        })
-        .catch((error) => {
-          console.log(error.code);
-          console.log(error.message);
-        });
-    
+    console.log("Its here");
+
+    const result = await signInWithEmailAndPassword(auth, email, password);
   };
 
   const handleSignInWithGoogle = async () => {
     const result = await signInWithPopup(auth, provider);
     console.log(result.user);
     console.log(user);
-
-    router.push("/dashboard");
   };
 
-
+  useEffect(() => {
+    if (user) {
+      router.push("/dashboard");
+    }
+  }, [user]);
 
   return (
     <>
@@ -56,7 +47,13 @@ export default function Home() {
         <div className='flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24'>
           <div className='mx-auto w-full max-w-sm lg:w-96'>
             <div>
-              <img className='h-10 w-auto' src='/favicon.ico' alt='Logo' />
+              <Image
+                className='h-10 w-auto'
+                src='/favicon.ico'
+                alt='Logo'
+                width={50}
+                height={50}
+              />
               <h2 className='mt-8 text-2xl font-bold leading-9 tracking-tight text-gray-900'>
                 Sign in to your account
               </h2>
@@ -148,7 +145,10 @@ export default function Home() {
                     <button
                       type='submit'
                       className='flex w-full justify-center rounded-md bg-yellow-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
-                      onClick={handleSignInWithEmailandPassword}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleSignInWithEmailandPassword();
+                      }}
                     >
                       Sign in
                     </button>
@@ -173,10 +173,13 @@ export default function Home() {
 
                 <div className='mt-6 flex justify-center w-full items-center gap-4'>
                   <button
-                    onClick={handleSignInWithGoogle}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleSignInWithGoogle();
+                    }}
                     className='flex w-2/5 items-center justify-center gap-3 rounded-md bg-[#24292F] px-3 py-1.5 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#24292F]'
                   >
-                    <img
+                    <Image
                       src='/icons8-google.svg'
                       width={26}
                       height={26}
@@ -195,8 +198,8 @@ export default function Home() {
           <Image
             className='absolute inset-0 h-full w-full object-cover'
             src={loginBg}
-            width={1000}
-            height={1000}
+            // width={1000}
+            // height={1000}
             alt=''
           />
         </div>
