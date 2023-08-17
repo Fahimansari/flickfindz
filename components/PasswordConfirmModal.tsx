@@ -9,7 +9,7 @@ interface ConfirmationModalProps{
 }
 
 const PasswordConfirmModal: React.FC<ConfirmationModalProps> = ({opened, updateModalValue}) => {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
 
   const cancelButtonRef = useRef(null)
 
