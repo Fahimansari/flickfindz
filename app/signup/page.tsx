@@ -65,7 +65,7 @@ e.preventDefault();
             Sign up with Flick Findz
           </h2>
           <div className='mt-2 text-sm leading-6 text-gray-500'>
-            Not a member?{" "}
+            Already a member?{" "}
             <Link
               href='/'
               className='font-semibold text-yellow-600 hover:text-yellow-500'
