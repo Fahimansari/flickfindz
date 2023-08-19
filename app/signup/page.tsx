@@ -1,7 +1,7 @@
 "use client";
 import PasswordConfirmModal from "@/components/PasswordConfirmModal";
 import { initFirebase } from "@/firebase/firebaseConfig";
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, sendEmailVerification } from "firebase/auth";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
 import { useState } from "react";
@@ -33,8 +33,12 @@ e.preventDefault();
       console.log("We can pass these details to Sign Up");
 
       await createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
+        .then(async (userCredential) => {
           console.log(userCredential);
+          if (auth?.currentUser) {
+            
+            await sendEmailVerification(auth.currentUser)
+          }
           router.push('/verify-email')
           
         })

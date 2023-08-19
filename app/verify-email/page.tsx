@@ -1,10 +1,27 @@
-import { EnvelopeOpenIcon } from '@heroicons/react/20/solid'
+'use client'
+import { initFirebase } from '@/firebase/firebaseConfig';
+import { EnvelopeOpenIcon } from '@heroicons/react/20/solid';
+import { getAuth } from 'firebase/auth';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
-export default function Example() {
-  return (
+const VerifyEmail =  () =>  {
 
-    <>
-   
+  const app = initFirebase()
+  const auth = getAuth();
+  const [isVerified, setIsVerified] = useState(false)
+  console.log('This is the Email Verification Page');
+const router = useRouter()
+  
+  console.log(auth.currentUser);
+ 
+const handleVerified = () => {
+  router.push('/dashboard')
+}
+  
+
+  
+  return (  <>
    <div className='flex justify-center items-center h-screen'>
     <div className="text-center w-200 h-200 mx-500">
       <svg
@@ -27,6 +44,10 @@ export default function Example() {
       <div className="mt-6">
         <button
           type="button"
+          onClick={(e) => {
+            e.preventDefault();
+            handleVerified();
+          }}
           className="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
           <EnvelopeOpenIcon className="-ml-0.5 mr-1.5 h-5 w-5" aria-hidden="true" />
@@ -34,11 +55,10 @@ export default function Example() {
         </button>
       </div>
     </div>
-
     </div>
     </>
-   
   )
 }
 
+export default VerifyEmail
 

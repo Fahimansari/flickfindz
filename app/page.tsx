@@ -5,8 +5,8 @@ import {
   GoogleAuthProvider,
   getAuth,
   signInWithEmailAndPassword,
-  signInWithPopup,
-} from "firebase/auth";
+  signInWithPopup, signOut
+} from 'firebase/auth';
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -25,19 +25,23 @@ export default function Home() {
 
   const handleSignInWithEmailandPassword = async () => {
 
-    await signInWithEmailAndPassword(auth, email, password);
+    await signInWithEmailAndPassword(auth, email, password).then(() => {
+      router.push('/dashboard')
+    });
   };
 
   const handleSignInWithGoogle = async () => {
-  await signInWithPopup(auth, provider);
+  await signInWithPopup(auth, provider).then(() => {
+    router.push('./dashboard')
+  });
   
   };
 
   useEffect(() => {
     if (user) {
-      router.push("/dashboard");
+      signOut(auth)
     }
-  }, [user,router]);
+  }, []);
 
   return (
     <>
