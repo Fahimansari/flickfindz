@@ -24,7 +24,7 @@ const handleLogOut = async () => {
     router.push('/')
 
     
-  }, [user])
+  }, [user,router])
   
   return (
 

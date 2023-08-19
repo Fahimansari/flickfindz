@@ -3,6 +3,7 @@ import PasswordConfirmModal from "@/components/PasswordConfirmModal";
 import { initFirebase } from "@/firebase/firebaseConfig";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import Link from "next/link";
+import { useRouter } from 'next/navigation';
 import { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 const SignUp = () => {
@@ -12,6 +13,7 @@ const SignUp = () => {
   const [modalOpen, setmodalOpen] = useState(false);
   const app = initFirebase();
   const auth = getAuth();
+  const router = useRouter();
 
   const [user, loading] = useAuthState(auth);
 
@@ -32,12 +34,17 @@ e.preventDefault();
 
       await createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          console.log(user);
+          console.log(userCredential);
+          router.push('/verify-email')
+          
         })
         .catch((error) => {
           console.log(error.code);
           console.log(error.message);
         });
+
+        console.log(user);
+        
     }
   };
 

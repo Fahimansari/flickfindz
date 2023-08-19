@@ -37,7 +37,7 @@ export default function Home() {
     if (user) {
       router.push("/dashboard");
     }
-  }, [user]);
+  }, [user,router]);
 
   return (
     <>
