@@ -55,7 +55,7 @@ export default function Home() {
               <h2 className='mt-8 text-2xl font-bold leading-9 tracking-tight text-gray-900'>
                 Sign in to your account
               </h2>
-              <p className='mt-2 text-sm leading-6 text-gray-500'>
+              <div className='mt-2 text-sm leading-6 text-gray-500'>
                 Not a member?{" "}
                 <Link
                   href='/signup'
@@ -63,7 +63,7 @@ export default function Home() {
                 >
                   Sign Up
                 </Link>
-              </p>
+              </div>
             </div>
 
             <div className='mt-10'>

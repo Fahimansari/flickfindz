@@ -2,13 +2,13 @@
 import PasswordConfirmModal from "@/components/PasswordConfirmModal";
 import { initFirebase } from "@/firebase/firebaseConfig";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import Link from "next/link";
 import { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-
-export default function SignUp() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmpassword, setConfirmpassword] = useState("");
+const SignUp = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmpassword, setConfirmpassword] = useState('');
   const [modalOpen, setmodalOpen] = useState(false);
   const app = initFirebase();
   const auth = getAuth();
@@ -19,16 +19,18 @@ export default function SignUp() {
     setmodalOpen(false);
   };
 
-  const handleSignUp = () => {
-    setmodalOpen(false);
-
+  const handleSignUp = async (e:any) => {
+    // setmodalOpen(false);
+e.preventDefault();
     if (password !== confirmpassword) {
-      setmodalOpen(true);
+     console.log('Password doesnt match');
+     setmodalOpen(true)
+      
     } else {
-      setmodalOpen(false);
+      // setmodalOpen(false);
       console.log("We can pass these details to Sign Up");
 
-      createUserWithEmailAndPassword(auth, email, password)
+      await createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           console.log(user);
         })
@@ -39,14 +41,13 @@ export default function SignUp() {
     }
   };
 
-
   return (
     <>
-    <PasswordConfirmModal
-          opened={modalOpen}
-          updateModalValue={updateModalValue}
-        />
       <div className='flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8'>
+      <PasswordConfirmModal
+        opened={modalOpen}
+        updateModalValue={updateModalValue}
+      />
         <div className='sm:mx-auto sm:w-full sm:max-w-sm'>
           <img
             className='mx-auto h-10 w-auto'
@@ -56,6 +57,15 @@ export default function SignUp() {
           <h2 className='mt-5 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900'>
             Sign up with Flick Findz
           </h2>
+          <div className='mt-2 text-sm leading-6 text-gray-500'>
+            Not a member?{" "}
+            <Link
+              href='/'
+              className='font-semibold text-yellow-600 hover:text-yellow-500'
+            >
+              Sign In
+            </Link>
+          </div>
         </div>
 
         <div className='mt-10 sm:mx-auto sm:w-full sm:max-w-sm'>
@@ -129,8 +139,8 @@ export default function SignUp() {
               <button
                 type='submit'
                 onSubmit={(e) => {
-                  e.preventDefault();
-                  handleSignUp();
+                  // e.preventDefault();
+                  handleSignUp(e);
                 }}
                 className='flex w-1/2 justify-center rounded-md bg-yellow-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600'
               >
@@ -139,8 +149,9 @@ export default function SignUp() {
             </div>
           </form>
         </div>
-        
       </div>
     </>
   );
-}
+};
+
+export default SignUp;
