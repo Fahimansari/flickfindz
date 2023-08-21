@@ -40,7 +40,7 @@ const Question: React.FC<QuestionProps> =   ({question}) =>  {
               <div key={option.id} className="flex items-center  ">
                 <input
                   id={option.id}
-                  name="answer"
+                  name='answer'
                   type="radio"
                   defaultChecked={option.id === 'action'}
                   className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
