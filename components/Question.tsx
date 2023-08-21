@@ -51,3 +51,4 @@ const Question: React.FC<QuestionProps> =   ({hy, there}) =>  {
     )
   }
   
+  export default Question
