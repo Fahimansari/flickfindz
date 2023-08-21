@@ -17,8 +17,13 @@ const notificationMethods = [
     { id: 'sms', title: 'Phone (SMS)' },
     { id: 'push', title: 'Push notification' },
   ]
-  
-  export default function Question({hy, there}) {
+
+  interface QuestionProps {
+    hy: string;
+    there: string;
+  }
+
+const Question: React.FC<QuestionProps> =   ({hy, there}) =>  {
     return (
       <div>
         <label className="text-base font-semibold text-gray-900">Notifications</label>
