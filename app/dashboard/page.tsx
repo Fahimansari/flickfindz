@@ -1,5 +1,5 @@
 'use client'
-import Question from '@/components/Question'
+import QuestionForm from '@/components/QuestionForm'
 import { initFirebase } from '@/firebase/firebaseConfig'
 import { getAuth, signOut } from 'firebase/auth'
 import { useRouter } from 'next/navigation'
@@ -32,7 +32,8 @@ const handleLogOut = async () => {
     <>
     <div>
     <div>{user?.email}</div>
-    <Question hy="there" there="hy" />
+   
+<QuestionForm />
     <button onClick={handleLogOut}> Logout</button>
     </div>
     </>
