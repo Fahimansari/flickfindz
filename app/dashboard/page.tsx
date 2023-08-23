@@ -1,4 +1,5 @@
 'use client'
+import NavBar from '@/components/Navbar'
 import QuestionForm from '@/components/QuestionForm'
 import { initFirebase } from '@/firebase/firebaseConfig'
 import { getAuth, signOut } from 'firebase/auth'
@@ -32,7 +33,7 @@ const handleLogOut = async () => {
     <>
     <div>
     <div>{user?.email}</div>
-   
+   <NavBar /> 
 <QuestionForm />
     <button onClick={handleLogOut}> Logout</button>
     </div>
