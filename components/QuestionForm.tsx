@@ -10,7 +10,7 @@ const QuestionForm = () => {
   return (
     <>
       <form
-        className='relative bg-white px-6 pb-8 pt-10 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-1-2 sm:rounded-lg sm:px-10 w-1/2'
+        className='relative bg-white px-6 pb-8 pt-10 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-full sm:min-w-3/4 sm:rounded-lg sm:px-10 lg:w-1/2'
         action='#'
         method=''
       >
