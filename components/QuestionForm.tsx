@@ -22,7 +22,7 @@ const QuestionForm = () => {
           {/* Adjust this container's classes as needed */}
           <button
             type='submit'
-            className='bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 px-7 rounded focus:outline-none focus:ring focus:ring-indigo-200 shadow-xl'
+            className='bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-7 rounded focus:outline-none focus:ring focus:ring-yellow-200 shadow-xl'
             onClick={handleSubmit}
           >
             Submit
