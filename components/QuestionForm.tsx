@@ -4,14 +4,14 @@ import { useState } from "react";
 import Question from "./Question";
 
 const QuestionForm = () => {
-  const routerDashBoard = useRouter();
+  const router = useRouter();
   const [answers, setAnswers] = useState([]);
 
   console.log(`This is the Question Form page`);
 
   const handleSubmit = () => {
     console.log(`This function handles the submit`);
-    routerDashBoard.push("/suggestions");
+    router.push("/suggestions");
   };
   return (
     <>

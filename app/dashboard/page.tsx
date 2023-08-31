@@ -4,7 +4,7 @@ import QuestionForm from '@/components/QuestionForm'
 import { initFirebase } from '@/firebase/firebaseConfig'
 import { getAuth, signOut } from 'firebase/auth'
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 
 
@@ -16,12 +16,6 @@ const router = useRouter();
   const auth = getAuth()
 const [user, loading]= useAuthState(auth)
 
-const handleSignOut = async () => {
-  await signOut(auth).then(() => {
-    router.push('/`')
-  })
-}
-
 const handleLogOut = async () => {
   await signOut(auth).then(() => {
     router.push('/')
@@ -32,17 +26,22 @@ const handleLogOut = async () => {
 console.log('Hy');
 
   console.log(user);
-
+ 
+  useEffect(() => {
     
   if(!user)
     router.push('/')
+
+    
+  }, [user,router])
   
   return (
-  <>
+
+    <>
     <div>
     <div>{user?.email}</div>
-   <NavBar  /> 
-<QuestionForm  />
+   <NavBar /> 
+<QuestionForm />
     <button onClick={handleLogOut}> Logout</button>
     </div>
     </>
