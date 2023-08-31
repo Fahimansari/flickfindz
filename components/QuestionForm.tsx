@@ -1,11 +1,17 @@
 import questions_list from "@/constants/question_list";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import Question from "./Question";
 
 const QuestionForm = () => {
-  console.log(questions_list);
+  const routerDashBoard = useRouter();
+  const [answers, setAnswers] = useState([]);
+
+  console.log(`This is the Question Form page`);
 
   const handleSubmit = () => {
     console.log(`This function handles the submit`);
+    routerDashBoard.push("/suggestions");
   };
   return (
     <>
@@ -23,7 +29,10 @@ const QuestionForm = () => {
           <button
             type='submit'
             className='bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-7 rounded focus:outline-none focus:ring focus:ring-yellow-200 shadow-xl'
-            onClick={handleSubmit}
+            onClick={(e) => {
+              e.preventDefault();
+              handleSubmit();
+            }}
           >
             Submit
           </button>
