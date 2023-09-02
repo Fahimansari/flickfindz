@@ -1,6 +1,7 @@
 const questions_list = [
     {
         id: '1',
+        key: 'genre',
         question: 'What is your preferred Movie Genre?',
         options: [
             { id: 'action', title: 'Action' },
@@ -18,6 +19,7 @@ const questions_list = [
 
     {
         id: '2',
+        key: 'setting',
         question: 'What is your preferred movie setting?',
         options: [
             { id: 'contemporary', title: 'Contemporary' },
@@ -29,6 +31,7 @@ const questions_list = [
 
     {
         id: '3',
+        key:'pace',
         question: "How do you like your movies paced?",
         options: [
             { id: 'fast-paced', title: 'Fast-paced and Action-Packed' },
@@ -38,6 +41,7 @@ const questions_list = [
     },
     {
         id: '4',
+        key: 'tone',
         question: 'What is your preferred movie tone?',
         options: [
             { id: 'light', title: 'Light-hearted and Comedic' },
@@ -48,6 +52,7 @@ const questions_list = [
     },
     {
         id: '5',
+        key:'rating',
         question: 'What is your preferred movie rating?',
         options: [
             { id: 'g', title: 'G (General Audience)' },
@@ -59,6 +64,7 @@ const questions_list = [
 
     {
         id: '6',
+        key:'plot',
         question: 'Do you prefer movies with a strong plot twist or a predictable storyline?',
         options: [
             { id: 'strong-plot', title: 'Strong Plot Twist' },

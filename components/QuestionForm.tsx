@@ -5,7 +5,11 @@ import Question from "./Question";
 
 const QuestionForm = () => {
   const router = useRouter();
-  const [answers, setAnswers] = useState([]);
+  const [answers, setAnswer] = useState({});
+
+const handleAnswer = () => {
+  setAnswer({})
+}
 
   console.log(`This is the Question Form page`);
 
@@ -21,7 +25,7 @@ const QuestionForm = () => {
         method=''
       >
         {questions_list.map((question) => {
-          return <Question key={question.id} question={question} />;
+          return <Question key={question.id}  question={question} setAnswer={setAnswer}  />;
         })}
         <div className='flex justify-center items-center mt-10 p-10'>
           {" "}

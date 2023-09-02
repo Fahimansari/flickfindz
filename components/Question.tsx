@@ -19,9 +19,11 @@ const notificationMethods = [
   ]
 
   interface QuestionProps {
+    setAnswer:Function,
     question: {
       id: string,
       question:string,
+      key:string,
       options: 
         {id: string,
         title:string} []
@@ -29,7 +31,7 @@ const notificationMethods = [
     }
   }
 
-const Question: React.FC<QuestionProps> =   ({question}) =>  {
+const Question: React.FC<QuestionProps> =   ({question, setAnswer}) =>  {
     return (
       <div className="mt-20 shadow-xl p-10">
         <label className="text-base font-semibold text-gray-900">{question.question}</label>
