@@ -1,17 +1,4 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
+
 const notificationMethods = [
     { id: 'email', title: 'Email' },
     { id: 'sms', title: 'Phone (SMS)' },
@@ -60,3 +47,5 @@ const Question: React.FC<QuestionProps> =   ({question, setAnswer}) =>  {
   }
   
   export default Question
+
+  
