@@ -21,11 +21,6 @@ const handleLogOut = async () => {
     router.push('/')
   })
 }
-
-
-console.log('Hy');
-
-  console.log(user);
  
   useEffect(() => {
     

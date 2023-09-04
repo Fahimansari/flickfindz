@@ -5,10 +5,15 @@ import Question from "./Question";
 
 const QuestionForm = () => {
   const router = useRouter();
-  const [answers, setAnswer] = useState({});
+  const [answers, setAnswers] = useState({});
 
-const handleAnswer = () => {
-  setAnswer({})
+
+  // Add an Initialized Answer with Default Check values
+
+const handleAnswer = (event : React.ChangeEvent<HTMLInputElement>) => {
+  const {name, value} = event.target
+    setAnswers({...answers, [name]: value})
+   
 }
 
   console.log(`This is the Question Form page`);
@@ -25,7 +30,7 @@ const handleAnswer = () => {
         method=''
       >
         {questions_list.map((question) => {
-          return <Question key={question.id}  question={question} setAnswer={setAnswer}  />;
+          return <Question key={question.id}  question={question} handleAnswer={handleAnswer}  />;
         })}
         <div className='flex justify-center items-center mt-10 p-10'>
           {" "}
