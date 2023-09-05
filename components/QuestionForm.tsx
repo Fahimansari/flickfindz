@@ -3,24 +3,34 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Question from "./Question";
 
-const QuestionForm = () => {
-  const router = useRouter();
-  const [answers, setAnswers] = useState({});
-
-
-  // Add an Initialized Answer with Default Check values
-
-const handleAnswer = (event : React.ChangeEvent<HTMLInputElement>) => {
-  const {name, value} = event.target
-    setAnswers({...answers, [name]: value})
-   
+interface Answers {
+  [key: string]: string;
 }
+
+const QuestionForm = () => {
+
+
+  let initialAnswers: Answers = {};
+  questions_list.forEach((question) => {
+    initialAnswers[question.id] = question.options[0].title;
+  });
+
+  const router = useRouter();
+  const [answers, setAnswers] = useState(initialAnswers);
+
+
+  const handleAnswer = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setAnswers({ ...answers, [name]: value });
+  };
 
   console.log(`This is the Question Form page`);
 
   const handleSubmit = () => {
     console.log(`This function handles the submit`);
     router.push("/suggestions");
+
+    
   };
   return (
     <>
@@ -30,7 +40,13 @@ const handleAnswer = (event : React.ChangeEvent<HTMLInputElement>) => {
         method=''
       >
         {questions_list.map((question) => {
-          return <Question key={question.id}  question={question} handleAnswer={handleAnswer}  />;
+          return (
+            <Question
+              key={question.id}
+              question={question}
+              handleAnswer={handleAnswer}
+            />
+          );
         })}
         <div className='flex justify-center items-center mt-10 p-10'>
           {" "}
