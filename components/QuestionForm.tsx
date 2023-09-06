@@ -14,20 +14,27 @@ const QuestionForm = () => {
   questions_list.forEach((question) => {
     initialAnswers[question.id] = question.options[0].title;
   });
-
+  
   const router = useRouter();
   const [answers, setAnswers] = useState(initialAnswers);
-
-
+  
+  sessionStorage.setItem("answers", JSON.stringify(answers));
+  
   const handleAnswer = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setAnswers({ ...answers, [name]: value });
   };
-
+  
+  console.log(answers);
+  
+  
   console.log(`This is the Question Form page`);
-
+  
   const handleSubmit = () => {
+    
+    
     console.log(`This function handles the submit`);
+    // sessionStorage.setItem("answers", JSON.stringify(answers));
     router.push("/suggestions");
 
     
