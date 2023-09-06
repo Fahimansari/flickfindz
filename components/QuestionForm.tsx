@@ -18,8 +18,10 @@ const QuestionForm = () => {
   const router = useRouter();
   const [answers, setAnswers] = useState(initialAnswers);
   
+  if (typeof window !== "undefined")  {
+
   sessionStorage.setItem("answers", JSON.stringify(answers));
-  
+  }
   const handleAnswer = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setAnswers({ ...answers, [name]: value });
