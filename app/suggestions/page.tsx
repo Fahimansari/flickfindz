@@ -1,7 +1,9 @@
 "use client"
-const answers = JSON.parse(sessionStorage.getItem("answers") || "{}");
+
+
 
 const Suggestions = () => {
+  const answers = JSON.parse(sessionStorage.getItem("answers") || "{}");
 
 console.log("Answers in suggestions page:", answers);
 
