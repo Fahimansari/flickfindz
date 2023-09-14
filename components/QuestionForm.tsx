@@ -1,4 +1,5 @@
 import questions_list from "@/constants/question_list";
+import axios from 'axios';
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Question from "./Question";
@@ -33,10 +34,20 @@ const QuestionForm = () => {
   console.log(`This is the Question Form page`);
   
   const handleSubmit = () => {
+
+    axios.get('/api/samp/').then((response) => {
+      console.log(response);
+      
+    }).catch((err) => {
+      console.log(err)}
+    )
+
     
     
     console.log(`This function handles the submit`);
     // sessionStorage.setItem("answers", JSON.stringify(answers));
+
+
     router.push("/suggestions");
 
     
