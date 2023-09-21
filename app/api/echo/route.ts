@@ -30,9 +30,13 @@ export async function POST(request:Request) {
 
     const parsedDataAll = data_form.entries()
     // console.log(parsedDataAll);
+
+    let parsedDataObj: { [key: string]: FormDataEntryValue } = {};
     
     for (var pair of data_form.entries()) {
-        console.log("Key: " + pair[0] + ", Value: " + pair[1]);
+        // console.log("Key: " + pair[0] + ", Value: " + pair[1]);
+        console.log(pair);
+        parsedDataObj[pair[0]] = pair[1]
       }
 
 
@@ -45,7 +49,9 @@ export async function POST(request:Request) {
     // console.log(parsedDataAll);
 
     
-    console.log(data_form);
+    // console.log(data_form);
+
+    // console.log(parsedDataObj)
     
     
 
@@ -56,11 +62,10 @@ export async function POST(request:Request) {
     
     // console.log(request);
     
-    const form_data = new FormData()
     const {searchParams} = new URL(request.url)
     console.log(searchParams);
 
-    return NextResponse.json(data_form)
+    return NextResponse.json(parsedDataObj)
     
 
     
