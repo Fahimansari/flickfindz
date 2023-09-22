@@ -2,21 +2,13 @@ import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY
-
-interface Movie {
-    movieGenre: string;
-    movieSetting: string;
-    moviePace: string;
-    movieTone: string;
-    movieRating: string; // Example type, use the appropriate type for your use case
-    movieStory: string;
-}
-
-const prompt: string = 'Give me something back'
-
-
+// const PORT = 
 
 export async function GET(request: NextRequest) {
+    
+    const prompt: string = 'Give me something back'     // replace this with the client entry about the film
+
+
 
     const { searchParams } = new URL(request.url)
     let params: { [key: string]: string } = {}
@@ -43,6 +35,8 @@ export async function GET(request: NextRequest) {
         params[key] = value;
     })
 
+    console.log(params);
+    
 
 
     return NextResponse.json({text: response.choices[0].text})
