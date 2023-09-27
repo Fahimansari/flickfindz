@@ -1,4 +1,4 @@
-[
+export const user_input_combinations = [
     [
       "Action",
       "Contemporary",
