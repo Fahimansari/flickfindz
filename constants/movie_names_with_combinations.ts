@@ -1,4 +1,6 @@
-export const movieNames = [
+import { movieWithCombinations } from '@/lib/types'
+
+export const movieNames: movieWithCombinations[] = [
         {
             "combination": [
                 "Action",
@@ -6,7 +8,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Rush Hour', 'Knight and Day', 'Hot Fuzz' ]"
+            "movieNames": ['Rush Hour', 'Knight and Day', 'Hot Fuzz' ]
         },
         {
             "combination": [
@@ -15,7 +17,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['John Wick', 'The Dark Knight', 'Mad Max: Fury Road', 'Die Hard', 'Logan', 'The Bourne Identity']"
+            "movieNames": ['John Wick', 'The Dark Knight', 'Mad Max: Fury Road', 'Die Hard', 'Logan', 'The Bourne Identity']
         },
         {
             "combination": [
@@ -24,7 +26,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['John Wick', 'Mission Impossible', 'Die Hard', 'Terminator', 'Speed', 'GoldenEye']"
+            "movieNames": ['John Wick', 'Mission Impossible', 'Die Hard', 'Terminator', 'Speed', 'GoldenEye']
         },
         {
             "combination": [
@@ -33,7 +35,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Deadpool','Hot Fuzz','Rush Hour','Tropic Thunder','The Hangover','Shanghai Noon']"
+            "movieNames": ['Deadpool','Hot Fuzz','Rush Hour','Tropic Thunder','The Hangover','Shanghai Noon']
         },
         {
             "combination": [
@@ -42,7 +44,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['John Wick', 'The Dark Knight', 'Die Hard', 'Logan', 'Dredd', 'The Raid']"
+            "movieNames": ['John Wick', 'The Dark Knight', 'Die Hard', 'Logan', 'Dredd', 'The Raid']
         },
         {
             "combination": [
@@ -51,7 +53,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['Die Hard', 'John Wick', 'Taken', 'Speed', 'The Bourne Identity', 'Mission Impossible']"
+            "movieNames": ['Die Hard', 'John Wick', 'Taken', 'Speed', 'The Bourne Identity', 'Mission Impossible']
         },
         {
             "combination": [
@@ -60,7 +62,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Jumanji', 'Home Alone', 'Mrs. Doubtfire']"
+            "movieNames": ['Jumanji', 'Home Alone', 'Mrs. Doubtfire']
         },
         {
             "combination": [
@@ -69,7 +71,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['John Wick', 'The Dark Knight', 'Uncut Gems', 'The Departed', 'No Country for Old Men', 'Oldboy']"
+            "movieNames": ['John Wick', 'The Dark Knight', 'Uncut Gems', 'The Departed', 'No Country for Old Men', 'Oldboy']
         },
         {
             "combination": [
@@ -78,7 +80,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['Die Hard', 'The Departed', 'Taken', 'Inception', 'The Town', 'Gone Girl']"
+            "movieNames": ['Die Hard', 'The Departed', 'Taken', 'Inception', 'The Town', 'Gone Girl']
         },
         {
             "combination": [
@@ -87,7 +89,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Braveheart', 'Robin Hood (1991)', 'Walk Hard: The Dewey Cox Story' ]"
+            "movieNames": ['Braveheart', 'Robin Hood (1991)', 'Walk Hard: The Dewey Cox Story' ]
         },
         {
             "combination": [
@@ -96,7 +98,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['300', 'Braveheart', 'Gladiator']"
+            "movieNames": ['300', 'Braveheart', 'Gladiator']
         },
         {
             "combination": [
@@ -105,7 +107,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['300', 'Gladiator', 'Braveheart'];"
+            "movieNames": ['300', 'Gladiator', 'Braveheart']
         },
         {
             "combination": [
@@ -114,7 +116,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Gladiator', 'Braveheart', 'The Great Race']"
+            "movieNames": ['Gladiator', 'Braveheart', 'The Great Race']
         },
         {
             "combination": [
@@ -123,7 +125,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['Gladiator', 'Braveheart', 'Saving Private Ryan']"
+            "movieNames": ['Gladiator', 'Braveheart', 'Saving Private Ryan']
         },
         {
             "combination": [
@@ -132,7 +134,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['Braveheart', 'Gladiator', 'Die Hard']"
+            "movieNames": ['Braveheart', 'Gladiator', 'Die Hard']
         },
         {
             "combination": [
@@ -141,7 +143,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Braveheart', 'Gladiator', 'Troy']"
+            "movieNames": ['Braveheart', 'Gladiator', 'Troy']
         },
         {
             "combination": [
@@ -150,7 +152,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['Gladiator', 'Braveheart', 'The Last Samurai']"
+            "movieNames": ['Gladiator', 'Braveheart', 'The Last Samurai']
         },
         {
             "combination": [
@@ -159,7 +161,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['Braveheart', 'Gladiator', 'Schindler's List']"
+            "movieNames": ['Braveheart', 'Gladiator', "Schindler's List"]
         },
         {
             "combination": [
@@ -168,7 +170,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Rush Hour', 'Star Wars: The Last Jedi', 'Iron Man', 'Men in Black', 'The Terminator', 'Blade Runner 2049']"
+            "movieNames": ['Rush Hour', 'Star Wars: The Last Jedi', 'Iron Man', 'Men in Black', 'The Terminator', 'Blade Runner 2049']
         },
         {
             "combination": [
@@ -177,7 +179,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['Matrix Reloaded', 'Equilibrium', 'Total Recall']"
+            "movieNames": ['Matrix Reloaded', 'Equilibrium', 'Total Recall']
         },
         {
             "combination": [
@@ -186,7 +188,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['The Matrix', 'Edge of Tomorrow', 'John Wick', 'Terminator 2', 'Mad Max: Fury Road', 'Captain America: The Winter Soldier']"
+            "movieNames":['The Matrix', 'Edge of Tomorrow', 'John Wick', 'Terminator 2', 'Mad Max: Fury Road', 'Captain America: The Winter Soldier']
         },
         {
             "combination": [
@@ -195,7 +197,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Men in Black', 'Thor: Ragnarok', 'Back to the Future', 'Jumanji', 'The Terminator', 'Ready Player One']"
+            "movieNames": ['Men in Black', 'Thor: Ragnarok', 'Back to the Future', 'Jumanji', 'The Terminator', 'Ready Player One']
         },
         {
             "combination": [
@@ -204,7 +206,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n[\"The Matrix\", \"Blade Runner 2049\", \"RoboCop\", \"Mad Max: Fury Road\", \"Total Recall\", \"Equilibrium\"]"
+            "movieNames": ["The Matrix", "Blade Runner 2049", "RoboCop", "Mad Max: Fury Road", "Total Recall", "Equilibrium"]
         },
         {
             "combination": [
@@ -213,7 +215,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['The Matrix', 'The Terminator', 'John Wick', 'Elysium', 'Blade Runner', 'Robocop']"
+            "movieNames": ['The Matrix', 'The Terminator', 'John Wick', 'Elysium', 'Blade Runner', 'Robocop']
         },
         {
             "combination": [
@@ -222,7 +224,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n1. Iron Man\n2. Men in Black\n3. Captain Marvel\n4. The Lego Movie\n5. Back to the Future\n6. Guardians of the Galaxy"
+            "movieNames": ["Iron Man", "Men in Black", "Captain Marvel","The Lego Movie", "Back to the Future", "Guardians of the Galaxy"]
         },
         {
             "combination": [
@@ -231,7 +233,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['Blade Runner', 'Tron', 'Mad Max Fury Road']"
+            "movieNames": ['Blade Runner', 'Tron', 'Mad Max Fury Road']
         },
         {
             "combination": [
@@ -240,7 +242,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['The Matrix', 'Blade Runner 2049', 'Ex Machina', 'Minority Report', 'Looper', 'Source Code']"
+            "movieNames": ['The Matrix', 'Blade Runner 2049', 'Ex Machina', 'Minority Report', 'Looper', 'Source Code']
         },
         {
             "combination": [
@@ -249,7 +251,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Rush Hour', 'Zoolander', 'Hot Fuzz'];"
+            "movieNames": ['Rush Hour', 'Zoolander', 'Hot Fuzz']
         },
         {
             "combination": [
@@ -258,7 +260,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['Talladega Nights', 'Snatch', 'Deadpool']"
+            "movieNames": ['Talladega Nights', 'Snatch', 'Deadpool']
         },
         {
             "combination": [
@@ -267,7 +269,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['Mission Impossible', 'Kingsman', 'Die Hard']"
+            "movieNames": ['Mission Impossible', 'Kingsman', 'Die Hard']
         },
         {
             "combination": [
@@ -276,7 +278,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Bride Wars', 'Ted', 'Game Night']"
+            "movieNames": ['Bride Wars', 'Ted', 'Game Night']
         },
         {
             "combination": [
@@ -285,7 +287,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['In Bruges', 'Deadpool', 'Shaun of the Dead']"
+            "movieNames": ['In Bruges', 'Deadpool', 'Shaun of the Dead']
         },
         {
             "combination": [
@@ -294,7 +296,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['The Hangover', 'Shaun of the Dead', 'In Bruges', 'Knives Out', 'Borat', 'Blazing Saddles' ]"
+            "movieNames": ['The Hangover', 'Shaun of the Dead', 'In Bruges', 'Knives Out', 'Borat', 'Blazing Saddles' ]
         },
         {
             "combination": [
@@ -303,7 +305,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Forgetting Sarah Marshall', 'Groundhog Day', 'This Is the End']"
+            "movieNames": ['Forgetting Sarah Marshall', 'Groundhog Day', 'This Is the End']
         },
         {
             "combination": [
@@ -312,7 +314,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['Dazed and Confused', 'Juno', 'Forgetting Sarah Marshall']"
+            "movieNames": ['Dazed and Confused', 'Juno', 'Forgetting Sarah Marshall']
         },
         {
             "combination": [
@@ -321,7 +323,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['Hot Fuzz', 'Knives Out', 'The Usual Suspects']"
+            "movieNames": ['Hot Fuzz', 'Knives Out', 'The Usual Suspects']
         },
         {
             "combination": [
@@ -330,7 +332,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Monty Python and the Holy Grail', 'Gladiator', 'Pirates of the Caribbean: The Curse of the Black Pearl']"
+            "movieNames": ['Monty Python and the Holy Grail', 'Gladiator', 'Pirates of the Caribbean: The Curse of the Black Pearl']
         },
         {
             "combination": [
@@ -339,7 +341,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['Monty Python and the Holy Grail', 'Life of Brian', 'Kung Fu Hustle']"
+            "movieNames": ['Monty Python and the Holy Grail', 'Life of Brian', 'Kung Fu Hustle']
         },
         {
             "combination": [
@@ -348,7 +350,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['Inglourious Basterds', 'Braveheart', 'The Right Stuff']"
+            "movieNames": ['Inglourious Basterds', 'Braveheart', 'The Right Stuff']
         },
         {
             "combination": [
@@ -357,7 +359,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Shakespeare in Love', 'Life is Beautiful', 'La La Land']"
+            "movieNames": ['Shakespeare in Love', 'Life is Beautiful', 'La La Land']
         },
         {
             "combination": [
@@ -366,7 +368,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['Life is Beautiful', 'Monsoon Wedding', 'Borat'];"
+            "movieNames": ['Life is Beautiful', 'Monsoon Wedding', 'Borat']
         },
         {
             "combination": [
@@ -375,7 +377,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['The Court Jester', 'Indiana Jones', 'Valkyrie']"
+            "movieNames": ['The Court Jester', 'Indiana Jones', 'Valkyrie']
         },
         {
             "combination": [
@@ -384,7 +386,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Annie Hall', 'Monty Python and the Holy Grail', 'When Harry Met Sally']"
+            "movieNames": ['Annie Hall', 'Monty Python and the Holy Grail', 'When Harry Met Sally']
         },
         {
             "combination": [
@@ -393,7 +395,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['Life is Beautiful', 'Elizabeth', 'Cyrano de Bergerac']"
+            "movieNames": ['Life is Beautiful', 'Elizabeth', 'Cyrano de Bergerac']
         },
         {
             "combination": [
@@ -402,7 +404,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['The Court Jester', 'Witches of Eastwick', 'Tuck Everlasting']"
+            "movieNames": ['The Court Jester', 'Witches of Eastwick', 'Tuck Everlasting']
         },
         {
             "combination": [
@@ -411,7 +413,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Back To The Future', 'The Terminator', 'Men In Black']"
+            "movieNames": ['Back To The Future', 'The Terminator', 'Men In Black']
         },
         {
             "combination": [
@@ -420,7 +422,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['The Matrix', 'John Wick', 'Blade Runner 2049']"
+            "movieNames": ['The Matrix', 'John Wick', 'Blade Runner 2049']
         },
         {
             "combination": [
@@ -429,7 +431,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['Blade Runner', 'Back to the Future', 'The Terminator']"
+            "movieNames": ['Blade Runner', 'Back to the Future', 'The Terminator']
         },
         {
             "combination": [
@@ -438,7 +440,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Back to the Future', 'The Hitchhiker's Guide to the Galaxy', 'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb']"
+            "movieNames": ['Back to the Future', "The Hitchhiker's Guide to the Galaxy", 'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb']
         },
         {
             "combination": [
@@ -447,7 +449,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['The Terminator', 'Blade Runner', 'Inception', 'RoboCop', 'Total Recall', 'District 9']"
+            "movieNames": ['The Terminator', 'Blade Runner', 'Inception', 'RoboCop', 'Total Recall', 'District 9']
         },
         {
             "combination": [
@@ -456,7 +458,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['Edge of Tomorrow', 'Back to the Future', 'Terminator 2: Judgement Day', 'I, Robot', 'Blade Runner 2049', 'Ex Machina'];"
+            "movieNames": ['Edge of Tomorrow', 'Back to the Future', 'Terminator 2: Judgement Day', 'I, Robot', 'Blade Runner 2049', 'Ex Machina']
         },
         {
             "combination": [
@@ -465,7 +467,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['The Martian', 'Wall-E', 'Back to the Future', 'Groundhog Day', 'Clueless', 'Her']"
+            "movieNames": ['The Martian', 'Wall-E', 'Back to the Future', 'Groundhog Day', 'Clueless', 'Her']
         },
         {
             "combination": [
@@ -474,7 +476,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Dark and Gritty"
             ],
-            "movieNames": " \n\n['Blade Runner 2049', 'The Lobster', 'Eternal Sunshine of the Spotless Mind']"
+            "movieNames": ['Blade Runner 2049', 'The Lobster', 'Eternal Sunshine of the Spotless Mind']
         },
         {
             "combination": [
@@ -483,7 +485,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['Blade Runner 2049', 'Looper', 'Ex Machina']"
+            "movieNames": ['Blade Runner 2049', 'Looper', 'Ex Machina']
         },
         {
             "combination": [
@@ -492,7 +494,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Rush Hour', 'Hot Fuzz', 'Mission: Impossible II']"
+            "movieNames": ['Rush Hour', 'Hot Fuzz', 'Mission: Impossible II']
         },
         {
             "combination": [
@@ -501,7 +503,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['The Bourne Identity', 'The Departed', 'Seven', 'Memento', 'Inception', 'Fight Club']"
+            "movieNames": ['The Bourne Identity', 'The Departed', 'Seven', 'Memento', 'Inception', 'Fight Club']
         },
         {
             "combination": [
@@ -510,7 +512,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['Gone Girl', 'The Departed', 'Die Hard', 'The Italian Job', 'Inception', 'Taken' ]"
+            "movieNames": ['Gone Girl', 'The Departed', 'Die Hard', 'The Italian Job', 'Inception', 'Taken' ]
         },
         {
             "combination": [
@@ -519,7 +521,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Ocean's Eleven', 'Tropic Thunder', 'Due Date', 'Get Smart', 'Knives Out', 'Mr Bean's Holiday']"
+            "movieNames": ["Ocean's Eleven", "Tropic Thunder", "Due Date", "Get Smart", "Knives Out", "Mr Bean's Holiday"]
         },
         {
             "combination": [
@@ -528,7 +530,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['Gone Girl', 'Shutter Island', 'Se7en']"
+            "movieNames": ['Gone Girl', 'Shutter Island', 'Se7en']
         },
         {
             "combination": [
@@ -537,7 +539,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['The Game', 'The Usual Suspects', 'Shutter Island' ]"
+            "movieNames": ['The Game', 'The Usual Suspects', 'Shutter Island' ]
         },
         {
             "combination": [
@@ -546,7 +548,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Liar Liar', 'Four Weddings and a Funeral', 'Groundhog Day']"
+            "movieNames": ['Liar Liar', 'Four Weddings and a Funeral', 'Groundhog Day']
         },
         {
             "combination": [
@@ -555,7 +557,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['The Usual Suspects', 'Mystic River', 'No Country for Old Men']"
+            "movieNames": ['The Usual Suspects', 'Mystic River', 'No Country for Old Men']
         },
         {
             "combination": [
@@ -564,7 +566,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['Seven', 'The Sixth Sense', 'Memento']"
+            "movieNames": ['Seven', 'The Sixth Sense', 'Memento']
         },
         {
             "combination": [
@@ -573,7 +575,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['The Man Who Knew Too Much', 'Shakespeare in Love', 'Tropic Thunder']"
+            "movieNames": ['The Man Who Knew Too Much', 'Shakespeare in Love', 'Tropic Thunder']
         },
         {
             "combination": [
@@ -582,7 +584,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['The Assassination of Jesse James by the Coward Robert Ford', 'The Terminator', 'Apocalypse Now']"
+            "movieNames": ['The Assassination of Jesse James by the Coward Robert Ford', 'The Terminator', 'Apocalypse Now']
         },
         {
             "combination": [
@@ -591,7 +593,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\nAnswer: ['The Great Train Robbery', 'The Great Escape', 'The Day of the Jackal']"
+            "movieNames": ['The Great Train Robbery', 'The Great Escape', 'The Day of the Jackal']
         },
         {
             "combination": [
@@ -600,7 +602,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Shakespeare in Love', 'Midnight in Paris', 'Young Sherlock Holmes']"
+            "movieNames": ['Shakespeare in Love', 'Midnight in Paris', 'Young Sherlock Holmes']
         },
         {
             "combination": [
@@ -609,7 +611,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['The Silence of the Lambs', 'Schindler's List', 'The Pianist']"
+            "movieNames": ['The Silence of the Lambs', "Schindler's List", 'The Pianist']
         },
         {
             "combination": [
@@ -618,7 +620,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['The Maltese Falcon', 'The Usual Suspects', 'Rashomon']"
+            "movieNames": ['The Maltese Falcon', 'The Usual Suspects', 'Rashomon']
         },
         {
             "combination": [
@@ -627,7 +629,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Rocky', 'The Princess Bride', 'Philadelphia Story']"
+            "movieNames": ['Rocky', 'The Princess Bride', 'Philadelphia Story']
         },
         {
             "combination": [
@@ -636,7 +638,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n\n\n['Gladiator', 'Schindler's List', 'Gangs of New York']"
+            "movieNames": ['Gladiator', "Schindler's List", 'Gangs of New York']
         },
         {
             "combination": [
@@ -645,7 +647,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['Rear Window', 'The Imitation Game', 'The Silence of the Lambs']"
+            "movieNames": ['Rear Window', 'The Imitation Game', 'The Silence of the Lambs']
         },
         {
             "combination": [
@@ -654,7 +656,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n ['The LEGO Movie', 'Ready Player One', 'Back to the Future']"
+            "movieNames": ['The LEGO Movie', 'Ready Player One', 'Back to the Future']
         },
         {
             "combination": [
@@ -663,7 +665,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['Blade Runner 2049', 'Source Code', 'Minority Report']"
+            "movieNames": ['Blade Runner 2049', 'Source Code', 'Minority Report']
         },
         {
             "combination": [
@@ -672,7 +674,7 @@ export const movieNames = [
                 "Fast-paced and Action-Packed",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['The Matrix', 'Inception', 'Edge of Tomorrow', 'Bloodshot', 'Minority Report', 'Upgrade']"
+            "movieNames": ['The Matrix', 'Inception', 'Edge of Tomorrow', 'Bloodshot', 'Minority Report', 'Upgrade']
         },
         {
             "combination": [
@@ -681,7 +683,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Blade Runner 2049', 'Men in Black', 'Back to the Future' ]"
+            "movieNames": ['Blade Runner 2049', 'Men in Black', 'Back to the Future' ]
         },
         {
             "combination": [
@@ -690,7 +692,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\n['Blade Runner', 'Minority Report', 'The Terminator']"
+            "movieNames": ['Blade Runner', 'Minority Report', 'The Terminator']
         },
         {
             "combination": [
@@ -699,7 +701,7 @@ export const movieNames = [
                 "Balanced with action and dialogue",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['Inception', 'Blade Runner 2049', 'Source Code']"
+            "movieNames": ['Inception', 'Blade Runner 2049', 'Source Code']
         },
         {
             "combination": [
@@ -708,7 +710,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Light-hearted and Comedic"
             ],
-            "movieNames": "\n\n['Inception', 'Eternal Sunshine of the Spotless Mind', 'The Truman Show']"
+            "movieNames": ['Inception', 'Eternal Sunshine of the Spotless Mind', 'The Truman Show']
         },
         {
             "combination": [
@@ -717,7 +719,7 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Dark and Gritty"
             ],
-            "movieNames": "\n\nAnswer: ['Blade Runner 2049', 'Memento', 'Inside Man']"
+            "movieNames": ['Blade Runner 2049', 'Memento', 'Inside Man']
         },
         {
             "combination": [
@@ -726,6 +728,6 @@ export const movieNames = [
                 "Slow and character-driven",
                 "Suspenseful and Intense"
             ],
-            "movieNames": "\n\n['Eternal Sunshine of the Spotless Mind', 'Minority Report', 'Blade Runner 2049']"
+            "movieNames": ['Eternal Sunshine of the Spotless Mind', 'Minority Report', 'Blade Runner 2049']
         }
     ]
